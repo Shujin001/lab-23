@@ -1,0 +1,40 @@
+@model WebApp2ByChirag.Models.Student
+@{
+    ViewData["Title"] = "Create Student Record";
+}
+
+<h2>Create Student Record</h2>
+<p><strong>Chirag Sharma</strong> — Roll No: <strong>6</strong></p>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="StdID"></label>
+        <input asp-for="StdID" class="form-control" />
+        <span asp-validation-for="StdID" style="color:red"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" style="color:red"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" style="color:red"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Faculty"></label>
+        <input asp-for="Faculty" class="form-control" />
+        <span asp-validation-for="Faculty" style="color:red"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RollNo"></label>
+        <input asp-for="RollNo" class="form-control" />
+        <span asp-validation-for="RollNo" style="color:red"></span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

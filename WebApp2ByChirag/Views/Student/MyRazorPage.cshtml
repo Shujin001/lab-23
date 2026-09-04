@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "My Razor Page";
+    int rollNo = (int)ViewBag.RollNo;
+    int tableOf = rollNo + 1;
+}
+
+<h2>My Razor Page</h2>
+<p><strong>Name:</strong> @ViewBag.Name</p>
+<p><strong>Roll No:</strong> @rollNo</p>
+<p><strong>Current Date and Time:</strong> @ViewBag.CurrentDateTime</p>
+
+<h3>Multiplication Table of @tableOf</h3>
+<table class="table table-bordered" style="width:250px">
+    @for (int i = 1; i <= 10; i++)
+    {
+        <tr>
+            <td>@tableOf x @i = @(tableOf * i)</td>
+        </tr>
+    }
+</table>
